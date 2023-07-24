@@ -1,0 +1,14 @@
+
+.home-page-container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  background-color: white;
+}
+
+.row-item-ctn{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
