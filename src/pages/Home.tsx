@@ -1,4 +1,4 @@
-import InputTextfield from "../components/inputField.tsx"
+import InputTextfield from "../components/inputField"
 import './index.scss'
 import DatePickerComponent from "../components/datePicker"
 import SelectField from "../components/selectField"
@@ -7,7 +7,7 @@ import { useState } from 'react'
 import moment from "moment"
 import HeaderNav from "../components/Header"
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+
 
 const Home = () => {
   const navigate = useNavigate()
@@ -25,7 +25,10 @@ const Home = () => {
   const handleSubmit = () => {
     sessionStorage.setItem('requireFields', JSON.stringify(values))
     if(values.occupation === 'cattleFarming'){
-      navigate(`/occupation/${values.occupation}`)
+      navigate(`/occupation/cattle-farming`)
+    }
+    if(values.occupation === 'pigFarming'){
+      navigate(`/occupation/pig-farming`)
     }
   }
 
@@ -197,6 +200,10 @@ const ocupationArr = [
   {
     label: 'Cattle Farming ',
     id: 'cattleFarming'
+  },
+  {
+    label: 'Pig Farming ',
+    id: 'pigFarming'
   },
   // {
   //   label: 'Livestock Farming ',

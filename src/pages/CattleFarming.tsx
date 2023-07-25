@@ -1,4 +1,4 @@
-import InputTextfield from "../components/inputField.tsx"
+import InputTextfield from "../components/inputField"
 import './index.scss'
 import PrimaryButton from "../components/button"
 import { useState } from 'react'
