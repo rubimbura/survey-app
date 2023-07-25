@@ -1,152 +1,138 @@
 import InputTextfield from "../components/inputField.tsx"
 import './index.scss'
-import DatePickerComponent from "../components/datePicker"
-import SelectField from "../components/selectField"
 import PrimaryButton from "../components/button"
 import { useState } from 'react'
-import moment from "moment"
 import HeaderNav from "../components/Header"
 import { useNavigate } from 'react-router-dom'
+import RadioButton from "../components/radioButton"
+import CheckboxComponent from "../components/checkbox"
+import TextArea from "../components/textArea"
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
+
 
 const OccupationForm = () => {
   const navigate = useNavigate()
-  const [values, setValues] = useState<any>({
-    date: '',
-    province: '',
-    district: '',
-    sector: '',
-    names: '',
-    age: '',
-    gender: '',
-    contact: ''
-  })
+  const [values, setValues] = useState<any>({})
+  const [other, setOther] = useState<any>({})
+  const [checkedItems, setCheckedItems] = useState(false)
 
-  const handleChange = () => {
+
+
+  const handleBreedChange = (id: any) => {
+    //@ts-ignore
+    breedOfDairyCattleArr[id].isSelected = !breedOfDairyCattleArr[id].isSelected
+    setCheckedItems(!checkedItems)
 
   }
 
   const handleSubmit = () => {
-    //${values.occupation}
-    navigate(`/occupation/hello`)
+    const breedOfDairyCattle = breedOfDairyCattleArr.filter((el: any) => el.isSelected).map((el => el.label))
+    if (values.breedOfDairyCattleOther) {
+      breedOfDairyCattle.push(values.breedOfDairyCattleOther)
+    }
+
   }
 
-  const handleDateChange = (date: any) => {
-    setValues({
-      ...values,
-      date: moment(date.$d).format("DD/MM/YY")
-    })
-  }
+
 
   return (
     <div className="home-page-container">
       <HeaderNav />
       <div style={{ padding: 48 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <DatePickerComponent
-            placeholder="Date of interview"
-            handleDateChange={handleDateChange}
-          />
-        </div>
-        <div className="row-item-ctn">
-          <InputTextfield
-            placeholder="Province"
-            handleChange={(e: any) => setValues({
-              ...values,
-              province: e.target.value
-            })}
-          />
-          <InputTextfield
-            placeholder="District"
-            handleChange={(e: any) => setValues({
-              ...values,
-              district: e.target.value
-            })}
-          />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <InputTextfield
-            placeholder="Sector"
-            handleChange={(e: any) => setValues({
-              ...values,
-              sector: e.target.value
-            })}
-          />
-          <InputTextfield
-            placeholder="Names"
-            handleChange={(e: any) => setValues({
-              ...values,
-              names: e.target.value
-            })}
-          />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <InputTextfield
-            placeholder="Age"
-            handleChange={(e: any) => setValues({
-              ...values,
-              age: e.target.value
-            })}
-          />
-          <InputTextfield
-            placeholder="Contact"
-            handleChange={(e: any) => setValues({
-              ...values,
-              contact: e.target.value
-            })}
-          />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <SelectField
-            placeholder="Gender"
-            menuItems={genderArr}
-            value={values.gender}
-            handleChange={(event: any) => {
+
+        <div className="separator-container">
+          <RadioButton
+            label="How do you consider your dairy farming occupation?"
+            items={farmingArr}
+            handleChange={(event) => {
               setValues({
                 ...values,
-                gender: event.target.value,
+                dairyFarmingOccupation: event.target.value
               })
-            }}
+              setOther({
+                ...other,
+                one: event.target.value === 'other'
+              })
+            }
+            }
           />
-          <SelectField
-            placeholder="Level of education"
-            menuItems={educationArr}
-            value={values.education}
-            handleChange={(event: any) => {
+          {other.one &&
+            <InputTextfield placeholder="Other" handleChange={(event: any) => setValues({
+              ...values,
+              dairyFarmingOccupation: event.target.value
+            })} />
+          }
+        </div>
+
+        <div className="separator-container">
+          <InputTextfield placeholder="How many dairy animals do you have in total" handleChange={(event: any) =>
+            setValues({
+              ...values,
+              dairyAnimals: event.target.value
+            })} />
+        </div>
+        <div className="separator-container">
+          <RadioButton
+            label="What type of housing system do you use?"
+            items={housingSystemTypeArr}
+            handleChange={(event) => {
               setValues({
                 ...values,
-                education: event.target.value,
+                housingSystemType: event.target.value
               })
-            }}
-          />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <SelectField
-            placeholder="Disablity"
-            menuItems={disablityItems}
-            value={values.disability}
-            handleChange={(event: any) => {
-              setValues({
-                ...values,
-                disability: event.target.value,
+              setOther({
+                ...other,
+                two: event.target.value === 'other'
               })
-            }}
+            }
+            }
           />
-          <SelectField
-            placeholder="Occupation"
-            menuItems={ocupationArr}
-            value={values.occupation}
-            handleChange={(event: any) => {
-              setValues({
-                ...values,
-                occupation: event.target.value,
-              })
-            }}
-          />
+          {other.two &&
+            <InputTextfield placeholder="Other" handleChange={(event: any) => setValues({
+              ...values,
+              housingSystemType: event.target.value
+            })} />
+          }
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <InputTextfield placeholder="2.1.	What is your position in your business/organization/institution/cooperative" handleChange={handleChange} />
-          <InputTextfield placeholder="2.2.	Number of years involved in mentioned occupation" handleChange={handleChange} />
+
+
+        <div className="separator-container">
+          <FormGroup>
+            <FormLabel id="demo-row-radio-buttons-group-label">Which breed of dairy cattle do you keep? Tick all those you keep</FormLabel>
+            {breedOfDairyCattleArr.map((el: any, idx: any) => {
+              if (el.isSelected === undefined) {
+                el.isSelected = false
+              }
+              return (
+                <div style={{ display: 'flex', alignItems: 'center' }} onClick={() => handleBreedChange(idx)}>
+                  <CheckboxComponent
+                    checked={el.isSelected}
+                  />
+                  <FormLabel id="demo-row-radio-buttons-group-label">{el.label}</FormLabel>
+                </div>
+              )
+            })}
+          </FormGroup>
+          <InputTextfield placeholder="other" handleChange={(event: any) => setValues({ ...values, breedOfDairyCattleOther: event.target.value })} />
         </div>
+
+        <div className="separator-container">
+          <InputTextfield placeholder="What is the average level of milk production per day in your farm?" handleChange={(event: any) => setValues({...values, averageProductionMilkPerDay: event.target.value})}/>
+        </div>
+        
+        <div className="separator-container">
+            <RadioButton label="Are you satisfied with your milk production yield?" 
+            items={truthItems}
+            handleChange={(event: any)=> setValues({...values, milkProductionSatisfaction:event.target.value})}
+        />
+        </div>
+
+        <div className="separator-container">
+          
+        </div>
+
         <div style={{ display: 'flex', marginLeft: 'auto', width: '30%', marginTop: 30 }}>
           <PrimaryButton onClick={handleSubmit} label="Submit" />
         </div>
@@ -158,83 +144,79 @@ const OccupationForm = () => {
 export default OccupationForm
 
 
+const farmingArr = [
+  {
+    label: 'Main income generating activity',
+    id: 'Main income generating activity'
+  },
+  {
+    label: 'Supplementary business ',
+    id: 'Supplementary business'
+  },
+  {
+    label: 'Family milk consumption',
+    id: 'Family milk consumption'
+  },
+  {
+    label: 'Others',
+    id: 'other'
+  },
+]
 
-const disablityItems = [
+
+const housingSystemTypeArr = [
+  {
+    label: 'Traditional',
+    id: 'Traditional'
+  },
+  {
+    label: 'modern cow sheds',
+    id: 'modern cow sheds'
+  },
+  {
+    label: 'Zero grazing ',
+    id: 'Zero grazing '
+  },
+  {
+    label: 'Others',
+    id: 'Others'
+  },
+]
+
+const breedOfDairyCattleArr = [
+  {
+    label: 'Friesian',
+    id: 'Friesian'
+  },
+  {
+    label: 'Crossbreed',
+    id: 'Crossbreed'
+  },
+  {
+    label: 'Jersey',
+    id: 'Jersey '
+  },
+  {
+    label: 'Sahiwal',
+    id: 'Sahiwal'
+  },
+  {
+    label: 'Brown suisse',
+    id: 'Brown suisse'
+  },
+  {
+    label: 'Ankole(local)',
+    id: 'Ankole'
+  },
+]
+
+const truthItems =  [
   {
     label: 'Yes',
-    id: true
+    id:true
   },
   {
     label: 'No',
-    id: false
-  }
-]
-
-const ocupationArr = [
-  {
-    label: 'Livestock Farming ',
-    id: 'livestockFarming'
-  },
-  {
-    label: 'Processing (MCC) ',
-    id: 'processingMcc'
-  },
-  {
-    label: 'Key informants ',
-    id: 'keyInformants'
-  },
-  {
-    label: 'Processing milk ',
-    id: 'processingMilk'
-  },
-  {
-    label: 'Processing meet ',
-    id: 'processingMeet'
-  },
-  {
-    label: 'Processing eggs ',
-    id: 'processingEggs'
-  },
-  {
-    label: 'Company ',
-    id: 'company'
-  },
-  {
-    label: 'Government ',
-    id: 'government'
-  },
-  {
-    label: 'Organization ',
-    id: 'organization'
-  },
-]
-
-const educationArr = [
-  {
-    label: 'No educaion',
-    id: 'No'
-  },
-  {
-    label: 'Primary',
-    id: 'primary'
-  },
-  {
-    label: 'Secondary',
-    id: 'secondary'
-  },
-  {
-    label: 'University ',
-    id: 'university'
-  },
-]
-
-const genderArr = [
-  {
-    label: 'Male',
-    id: 'male'
-  },
-  {
-    label: 'Female',
-    id: 'female'
+    id:false
   },
 ]

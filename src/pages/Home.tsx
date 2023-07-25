@@ -7,6 +7,7 @@ import { useState } from 'react'
 import moment from "moment"
 import HeaderNav from "../components/Header"
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Home = () => {
   const navigate = useNavigate()
@@ -15,18 +16,22 @@ const Home = () => {
     province: '',
     district: '',
     sector: '',
-    names: '',
+    name: '',
     age: '',
     gender: '',
     contact: ''
   })
 
-  const handleChange = () => {
-
-  }
-
   const handleSubmit = () => {
-    //${values.occupation}
+    const url = 'https://survey-app-heroku-4b2ea8ed2f87.herokuapp.com/information'
+    // axios.post(url, values)
+    //   .then((response: any) => {
+    //     console.log('Post successful:', response);
+    //   })
+    //   .catch((error:any) => {
+    //     console.error('Error posting data:', error);
+    //   });
+    sessionStorage.setItem('requireFields', values)
     navigate(`/occupation/hello`)
   }
 
@@ -72,14 +77,21 @@ const Home = () => {
             })}
           />
           <InputTextfield
-            placeholder="Names"
+            placeholder="Village"
             handleChange={(e: any) => setValues({
               ...values,
-              names: e.target.value
+              village: e.target.value
             })}
           />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <InputTextfield
+            placeholder="Names"
+            handleChange={(e: any) => setValues({
+              ...values,
+              name: e.target.value
+            })}
+          />
           <InputTextfield
             placeholder="Age"
             handleChange={(e: any) => setValues({
@@ -87,15 +99,15 @@ const Home = () => {
               age: e.target.value
             })}
           />
-          <InputTextfield
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <InputTextfield
             placeholder="Contact"
             handleChange={(e: any) => setValues({
               ...values,
               contact: e.target.value
             })}
           />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <SelectField
             placeholder="Gender"
             menuItems={genderArr}
@@ -107,19 +119,19 @@ const Home = () => {
               })
             }}
           />
-          <SelectField
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <SelectField
             placeholder="Level of education"
             menuItems={educationArr}
             value={values.education}
             handleChange={(event: any) => {
               setValues({
                 ...values,
-                education: event.target.value,
+                qualification: event.target.value,
               })
             }}
           />
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <SelectField
             placeholder="Disablity"
             menuItems={disablityItems}
@@ -131,7 +143,9 @@ const Home = () => {
               })
             }}
           />
-          <SelectField
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <SelectField
             placeholder="Occupation"
             menuItems={ocupationArr}
             value={values.occupation}
@@ -144,8 +158,23 @@ const Home = () => {
           />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <InputTextfield placeholder="2.1.	What is your position in your business/organization/institution/cooperative" handleChange={handleChange} />
-          <InputTextfield placeholder="2.2.	Number of years involved in mentioned occupation" handleChange={handleChange} />
+          <InputTextfield 
+            placeholder="What is your position in your business/organization/institution/cooperative" 
+            handleChange={(event:any) => 
+              setValues({
+              ...values,
+              position:event.target.value
+            })} 
+          />
+          <InputTextfield 
+            placeholder="Number of years involved in mentioned occupation" 
+            handleChange={(event:any) => {
+              setValues({
+                ...values,
+                experience:event.target.value
+              })
+            }} 
+          />
         </div>
         <div style={{ display: 'flex', marginLeft: 'auto', width: '30%', marginTop: 30 }}>
           <PrimaryButton onClick={handleSubmit} label="Submit" />

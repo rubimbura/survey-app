@@ -408,10 +408,10 @@ export const catleFarmers = [
   },
   {
     label:'3.23.	If yes, Give 3 of them?',
-    type:'textArea'
+    type:'textarea'
   },
   {
     label:'3.24.	In which areas do you plan to hire/recruit new farm workers/staff: Give names of positions',
-    type:'textArea'
+    type:'textarea'
   },
 ]
