@@ -23,16 +23,10 @@ const Home = () => {
   })
 
   const handleSubmit = () => {
-    const url = 'https://survey-app-heroku-4b2ea8ed2f87.herokuapp.com/information'
-    // axios.post(url, values)
-    //   .then((response: any) => {
-    //     console.log('Post successful:', response);
-    //   })
-    //   .catch((error:any) => {
-    //     console.error('Error posting data:', error);
-    //   });
-    sessionStorage.setItem('requireFields', values)
-    navigate(`/occupation/hello`)
+    sessionStorage.setItem('requireFields', JSON.stringify(values))
+    if(values.occupation === 'cattleFarming'){
+      navigate(`/occupation/${values.occupation}`)
+    }
   }
 
   const handleDateChange = (date: any) => {
@@ -201,41 +195,45 @@ const disablityItems = [
 
 const ocupationArr = [
   {
-    label: 'Livestock Farming ',
-    id: 'livestockFarming'
+    label: 'Cattle Farming ',
+    id: 'cattleFarming'
   },
-  {
-    label: 'Processing (MCC) ',
-    id: 'processingMcc'
-  },
-  {
-    label: 'Key informants ',
-    id: 'keyInformants'
-  },
-  {
-    label: 'Processing milk ',
-    id: 'processingMilk'
-  },
-  {
-    label: 'Processing meet ',
-    id: 'processingMeet'
-  },
-  {
-    label: 'Processing eggs ',
-    id: 'processingEggs'
-  },
-  {
-    label: 'Company ',
-    id: 'company'
-  },
-  {
-    label: 'Government ',
-    id: 'government'
-  },
-  {
-    label: 'Organization ',
-    id: 'organization'
-  },
+  // {
+  //   label: 'Livestock Farming ',
+  //   id: 'livestockFarming'
+  // },
+  // {
+  //   label: 'Processing (MCC) ',
+  //   id: 'processingMcc'
+  // },
+  // {
+  //   label: 'Key informants ',
+  //   id: 'keyInformants'
+  // },
+  // {
+  //   label: 'Processing milk ',
+  //   id: 'processingMilk'
+  // },
+  // {
+  //   label: 'Processing meet ',
+  //   id: 'processingMeet'
+  // },
+  // {
+  //   label: 'Processing eggs ',
+  //   id: 'processingEggs'
+  // },
+  // {
+  //   label: 'Company ',
+  //   id: 'company'
+  // },
+  // {
+  //   label: 'Government ',
+  //   id: 'government'
+  // },
+  // {
+  //   label: 'Organization ',
+  //   id: 'organization'
+  // },
 ]
 
 const educationArr = [
