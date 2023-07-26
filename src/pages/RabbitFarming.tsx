@@ -480,24 +480,20 @@ const pigFarmingOccupationArr = [
 
 const pigBreedsArr = [
   {
-    label:'Landrace',
-    id:'Landrace'
+    label:'Local breed rabbits',
+    id:'Local breed rabbits'
   },
   {
-    label:'Large white',
-    id:'Large white'
+    label:'Exotic breeds rabbits',
+    id:'Exotic breeds rabbits'
   },
   {
-    label:'Pietrain',
-    id:'Pietrain'
+    label:'Cross breed rabbits',
+    id:'Cross breed rabbits'
   },
   {
-    label:'Duroc',
-    id:'Duroc'
-  },
-  {
-    label:'Unknown cross breeds',
-    id:'Unknown cross breeds '
+    label:'Others',
+    id:'other'
   },
   
 ]
@@ -519,20 +515,16 @@ const pigMonthlyIncome = [
     id:'0-50,000'
   },
   {
-    label: '50,000 - 100,000',
-    id:'50,000 - 100,000'
+    label: '50,000 – 200, 000',
+    id:'50,000 – 200, 000'
   },
   {
-    label: '100,000 - 150,000',
-    id:'100,000 - 150,000'
+    label: '200,000 – 500,000',
+    id:'200,000 – 500,000'
   },
   {
-    label: '150,000 - 200,000',
-    id:'150,000 - 200,000'
-  },
-  {
-    label: 'Above 200,000',
-    id:'Above 200,000'
+    label: 'Above 500,000',
+    id:'Above 500,000'
   },
 ]
 
@@ -550,7 +542,7 @@ const pigsCompetitorsComparisonArr = [
     id:'Low quality'
   },
   {
-    label: 'Other',
+    label: 'Others',
     id:'other'
   },
 ]
@@ -580,7 +572,7 @@ const pigsMarketOutletPreferenceArr = [
 
 const pigsTechnicalContraintsArr = [
   {
-    label: 'Lack of / limited skills on Diseases/ Outbreaks diagnosis',
+    label: 'Lack of / limited skills on diseases/ outbreaks diagnosis',
     id:'Lack of / limited skills on Diseases/ Outbreaks diagnosis'
   },
   {
@@ -619,6 +611,10 @@ const pigsTechnicalContraintsArr = [
   {
     label: 'Lack of skills on farm record keeping',
     id:'Lack of skills on farm record keeping'
+  },
+  {
+    label:'Others ',
+    id:'other'
   },
 ]
 
