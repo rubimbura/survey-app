@@ -46,59 +46,59 @@ const GoatFarming = () => {
 
   const handleSubmit = () => {
     setDisabled(true)
-    const pigBreeds = pigBreedsArr.filter((el: any) => el.isSelected).map((el => el.label))
-    const pigsTechnicalContraint = pigsTechnicalContraintsArr.filter((el: any) => el.isSelected).map((el => el.label))
+    const goatsBreeds = pigBreedsArr.filter((el: any) => el.isSelected).map((el => el.label))
+    const goatTechnicalContraints = pigsTechnicalContraintsArr.filter((el: any) => el.isSelected).map((el => el.label))
     if(values.technicalContraintOther){
-      pigsTechnicalContraint.push(values.technicalContraintOther)
+      goatTechnicalContraints.push(values.technicalContraintOther)
       delete values.technicalContraintOther
     }
-    const pigsTypeOfStaff = PigstypeOfStaffArr.filter((el: any) => el.isSelected).map((el => el.label))
+    const goatTypeOfStaff = PigstypeOfStaffArr.filter((el: any) => el.isSelected).map((el => el.label))
     if(values.pigsTypeOfStaffOther) {
-      pigsTypeOfStaff.push(values.pigsTypeOfStaffOther)
+      goatTypeOfStaff.push(values.pigsTypeOfStaffOther)
       delete values.pigsTypeOfStaffOther
     }
 
-    const pigsSpecificSkillsWorkersNeeded = specificSkillsWorkersNeededArr.filter((el: any) => el.isSelected).map((el => el.label))
+    const goatSpecificSkillsWorkersNeeded = specificSkillsWorkersNeededArr.filter((el: any) => el.isSelected).map((el => el.label))
     if(values.specificSkillsWorkersNeededOther) {
-      pigsSpecificSkillsWorkersNeeded.push(values.specificSkillsWorkersNeededOther)
+      goatSpecificSkillsWorkersNeeded.push(values.specificSkillsWorkersNeededOther)
       delete values.specificSkillsWorkersNeededOther
     }
 
-    const pigsWomenYouthChallengeExample = []
+    const goatWomenYouthChallengeExample = []
     if(values.womenYouthChallengeExampleOther1){
-      pigsWomenYouthChallengeExample.push(values.womenYouthChallengeExampleOther1)
+      goatWomenYouthChallengeExample.push(values.womenYouthChallengeExampleOther1)
       delete values.womenYouthChallengeExampleOther1
     }
     if(values.womenYouthChallengeExampleOther2){
-      pigsWomenYouthChallengeExample.push(values.womenYouthChallengeExampleOther2)
+      goatWomenYouthChallengeExample.push(values.womenYouthChallengeExampleOther2)
       delete values.womenYouthChallengeExampleOther2
     }
 
-    const pigsHiringRequirements = []
+    const goatHiringRequirements = []
     if(values.hiringRequirements1){
-      pigsHiringRequirements.push(values.hiringRequirements1)
+      goatHiringRequirements.push(values.hiringRequirements1)
       delete values.hiringRequirements1
     }
     if(values.hiringRequirements2){
-      pigsHiringRequirements.push(values.hiringRequirements2)
+      goatHiringRequirements.push(values.hiringRequirements2)
       delete values.hiringRequirements2
     }
     if(values.hiringRequirements3){
-      pigsHiringRequirements.push(values.hiringRequirements3)
+      goatHiringRequirements.push(values.hiringRequirements3)
       delete values.hiringRequirements3
     }
 
-    const pigsHiringPositions = []
+    const goatHiringPositions = []
     if(values.hiringPositions1){
-      pigsHiringPositions.push(values.hiringPositions1)
+      goatHiringPositions.push(values.hiringPositions1)
       delete values.hiringPositions1
     }
     if(values.hiringPositions3){
-      pigsHiringPositions.push(values.hiringPositions2)
+      goatHiringPositions.push(values.hiringPositions2)
       delete values.hiringPositions3
     }
     if(values.hiringPositions3){
-      pigsHiringPositions.push(values.hiringPositions3)
+      goatHiringPositions.push(values.hiringPositions3)
       delete values.hiringPositions3
     }
     
@@ -106,13 +106,13 @@ const GoatFarming = () => {
     const formattedData = JSON.parse(savedItem)
     const payload = {
       ...values,
-      pigsHiringPositions,
-      pigsHiringRequirements,
-      pigsWomenYouthChallengeExample,
-      pigsSpecificSkillsWorkersNeeded,
-      pigsTypeOfStaff,
-      pigsTechnicalContraint,
-      pigBreeds,
+      goatHiringPositions,
+      goatHiringRequirements,
+      goatWomenYouthChallengeExample,
+      goatSpecificSkillsWorkersNeeded,
+      goatTypeOfStaff,
+      goatTechnicalContraints,
+      goatsBreeds,
       ...formattedData
   }
 
@@ -142,12 +142,12 @@ const GoatFarming = () => {
 
       <div className="separator-container">
           <RadioButton
-            label="How do you consider your dairy farming occupation?"
+            label="How do you consider your goat/sheep occupation?"
             items={pigFarmingOccupationArr}
             handleChange={(event) => {
               setValues({
                 ...values,
-                pigFarmingOccupation: event.target.value
+                goatFarmingOccupation: event.target.value
               })
               setOther({
                 ...other,
@@ -160,22 +160,22 @@ const GoatFarming = () => {
           {other.one &&
             <InputTextfield  placeholder="Other" handleChange={(event: any) => setValues({
               ...values,
-              pigFarmingOccupation: event.target.value
+              goatFarmingOccupation: event.target.value
             })} />
           }
         </div>
 
         <div className="separator-container">
-          <InputTextfield type="number" placeholder="How many pigs do you have in total?" handleChange={(event: any) =>
+          <InputTextfield type="number" placeholder="How many goats/sheep do you have in total?" handleChange={(event: any) =>
             setValues({
               ...values,
-              pigNumbers: event.target.value
+              goatsNumbers: event.target.value
             })} />
         </div>
 
         <div className="separator-container">
           <FormGroup>
-            <FormLabel id="demo-row-radio-buttons-group-label">Which breed of dairy cattle do you keep? Tick all those you keep</FormLabel>
+            <FormLabel id="demo-row-radio-buttons-group-label">Which breed do you keep? Tick all those you keep</FormLabel>
             {pigBreedsArr.map((el: any, idx: any) => {
               if (el.isSelected === undefined) {
                 el.isSelected = false
@@ -193,35 +193,35 @@ const GoatFarming = () => {
         </div>
 
         <div className="separator-container">
-          <InputTextfield placeholder="What is the average number of pigs sold per month in your farm? " handleChange={(event: any) =>
+          <InputTextfield placeholder="What is the average number of goat/sheep sold per month in your farm? " handleChange={(event: any) =>
             setValues({
               ...values,
-              monthlyPigsAverage: event.target.value
+              monthlyGoatsAverage: event.target.value
             })} />
         </div>
 
         <div className="separator-container">
-            <RadioButton label="Do you have a regular market for your pig production" 
+            <RadioButton label="Do you have a regular market for your goat/sheep  production" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigRegularMarket:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasGoatRegularMarket:event.target.value})}
         />
         </div>
         
         <div className="separator-container">
-            <RadioButton label="What is your estimated monthly income from piggery activities?" 
+            <RadioButton label="What is your estimated monthly income from goat/sheep activities?" 
             items={pigMonthlyIncome}
-            handleChange={(event: any)=> setValues({...values, pigMonthlyIncome:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, goatMonthlyIncome:event.target.value})}
         />
         </div>
         
         <div className="separator-container">
           <RadioButton
-            label="How your product is different from your competitors’ products (pigs)? And How are you priced compared to competitors?"
+            label="7.7.	How your product is different from your competitors’ products (meat, live animal)? And How are you priced compared to competitors?"
             items={pigsCompetitorsComparisonArr}
             handleChange={(event) => {
               setValues({
                 ...values,
-                pigsCompetitorsComparison: event.target.value
+                goatCompetitorsComparison: event.target.value
               })
               setOther({
                 ...other,
@@ -234,22 +234,22 @@ const GoatFarming = () => {
           {other.two &&
             <InputTextfield  placeholder="Other" handleChange={(event: any) => setValues({
               ...values,
-              pigsCompetitorsComparison: event.target.value
+              goatCompetitorsComparison: event.target.value
             })} />
           }
         </div>
 
         <div className="separator-container">
-            <RadioButton label="Do you face any problems in selling pigs? " 
+            <RadioButton label="Do you face any problems in selling goats/sheeps? " 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, isFacingSellingPigs:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, isFacingSellingGoats:event.target.value})}
         />
         </div>
 
         
         <div className="separator-container">
           <FormGroup>
-            <FormLabel id="demo-row-radio-buttons-group-label">What are the main skills/ technical constraints that may affect your dairy cattle production according to you? Tick all those you face.</FormLabel>
+            <FormLabel id="demo-row-radio-buttons-group-label">	What are the main skills/ technical constraints that may affect your goat/sheep production according to you? Tick all those you face.</FormLabel>
             {pigsTechnicalContraintsArr.map((el: any, idx: any) => {
               if (el.isSelected === undefined) {
                 el.isSelected = false
@@ -270,12 +270,12 @@ const GoatFarming = () => {
         <div className="separator-container">
             <RadioButton label="Do you have a farm staff/ workers?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, isPigsHavingStaf:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, isGoatHavingStaff:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
-          <InputTextfield type="number" placeholder="How many?" handleChange={(event: any) => setValues({...values, pigsNumberOfStaff: event.target.value})}/>
+          <InputTextfield type="number" placeholder="How many?" handleChange={(event: any) => setValues({...values, goatNumberOfStaff: event.target.value})}/>
         </div>
 
         <div className="separator-container">
@@ -306,7 +306,7 @@ const GoatFarming = () => {
             handleChange={(event) => {
               setValues({
                 ...values,
-                pigsGettingCompetentWorker: event.target.value
+                goatGettingCompetentWorker: event.target.value
               })
               setOther({
                 ...other,
@@ -318,7 +318,7 @@ const GoatFarming = () => {
           {other.five &&
             <InputTextfield placeholder="Other" handleChange={(event: any) => setValues({
               ...values,
-              pigsGettingCompetentWorker: event.target.value
+              goatGettingCompetentWorker: event.target.value
             })} />
           }
         </div>
@@ -330,7 +330,7 @@ const GoatFarming = () => {
             handleChange={(event) => {
               setValues({
                 ...values,
-                pigsTechnicalChallenges: event.target.value
+                goatTechnicalChallenges: event.target.value
               })
               setOther({
                 ...other,
@@ -342,7 +342,7 @@ const GoatFarming = () => {
           {other.six &&
             <InputTextfield placeholder="Other" handleChange={(event: any) => setValues({
               ...values,
-              pigsTechnicalChallenges: event.target.value
+              goatTechnicalChallenges: event.target.value
             })} />
           }
         </div>
@@ -368,9 +368,9 @@ const GoatFarming = () => {
         </div>
 
         <div className="separator-container">
-            <RadioButton label="Do you have specific challenges faced by women or youth in dairy cattle daily activities?" 
+            <RadioButton label="Do you have specific challenges faced by women or youth in goat/sheep farming daily activities?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsWomenYouthDairyCattleChallenges:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasGoatWomenYouthDairyCattleChallenges:event.target.value})}
         />
         </div>
 
@@ -386,49 +386,32 @@ const GoatFarming = () => {
         <div className="separator-container">
             <RadioButton label="Do you have persons with disabilities working in your farm?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsPersonWithDisability:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasGoatPersonWithDisability:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
-          <InputTextfield type="number" placeholder="How many?" handleChange={(event: any) => setValues({...values, pigsPersonsWithDisability: event.target.value})}/>
+          <InputTextfield type="number" placeholder="How many?" handleChange={(event: any) => setValues({...values, goatPersonsWithDisability: event.target.value})}/>
         </div>
 
         <div className="separator-container">
-            <RadioButton label="Do you plan for expanding your business/cattle farming?" 
+            <RadioButton label="Do you plan for expanding your business goat/sheep farming?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsExpansionPlanning:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasGoatExpansionPlanning:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
             <RadioButton label="Do you plan to recruit new farm workers/staff?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsRecruitmentPlanning:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasGoatRecruitmentPlanning:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
             <RadioButton label="If yes, are there any specific requirements do you ask before hiring her/his?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsHiringRequirement:event.target.value})}
-        />
-        </div>
-
-        <div className="separator-container">
-          <FormGroup>
-            <FormLabel id="demo-row-radio-buttons-group-label">If yes, give example of 2 challenges?</FormLabel>
-            <br/>
-            <InputTextfield placeholder="Example one" handleChange={(event: any) => setValues({ ...values, hiringRequirements1: event.target.value })} />
-            <InputTextfield placeholder="Example two" handleChange={(event: any) => setValues({...values, hiringRequirements2: event.target.value})}/>
-            <InputTextfield placeholder="Example three" handleChange={(event: any) => setValues({...values, hiringRequirements3: event.target.value})}/>
-          </FormGroup>
-        </div>
-
-        <div className="separator-container">
-            <RadioButton label="If yes, are there any specific requirements do you ask before hiring her/his?" 
-            items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsHiringRequirement:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasGoatHiringRequirement:event.target.value})}
         />
         </div>
 
@@ -441,6 +424,7 @@ const GoatFarming = () => {
             <InputTextfield placeholder="Example three" handleChange={(event: any) => setValues({...values, hiringRequirements3: event.target.value})}/>
           </FormGroup>
         </div>
+
 
         <div className="separator-container">
           <FormGroup>
@@ -480,20 +464,28 @@ const pigFarmingOccupationArr = [
 
 const pigBreedsArr = [
   {
-    label:'Landrace',
-    id:'Landrace'
+    label:'Local breed goat',
+    id:'Local breed goat'
   },
   {
-    label:'Large white',
-    id:'Large white'
+    label:'Alpine goat',
+    id:'Alpine goat'
   },
   {
-    label:'Pietrain',
-    id:'Pietrain'
+    label:'Boer goat',
+    id:'Boer goat '
   },
   {
-    label:'Duroc',
-    id:'Duroc'
+    label:'Merinos sheep',
+    id:'Merinos sheep '
+  },
+  {
+    label:'Cross breed goat ',
+    id:'Cross breed goat  '
+  },
+  {
+    label:'Cross breed sheep ',
+    id:'Cross breed sheep '
   },
   {
     label:'Unknown cross breeds',
