@@ -23,6 +23,50 @@ const Home = () => {
   })
 
   const handleSubmit = () => {
+    if(!values.date){
+      return
+    }
+    if(!values.province){
+      return
+    }
+    if(!values.district){
+      return
+    }
+    if(!values.sector){
+      return
+    }
+    if(!values.village){
+      return
+    }
+    if(!values.name){
+      return
+    }
+    if(!values.age){
+      return
+    }
+    if(!values.gender){
+      return
+    }
+    if(!values.contact){
+      return
+    }
+   
+    if(!values.disability){
+      return
+    }
+    if(!values.occupation){
+      return
+    }
+    if(!values.position){
+      return
+    }
+    if(!values.experience){
+      return
+    }
+    if(!values.qualification){
+      return
+    }
+    
     sessionStorage.setItem('requireFields', JSON.stringify(values))
     if(values.occupation === 'cattleFarming'){
       navigate(`/occupation/cattle-farming`)
