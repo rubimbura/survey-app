@@ -36,6 +36,14 @@ const Home = () => {
     if(values.occupation === 'rabitFarming'){
       navigate(`/occupation/rabbit-farming`)
     }
+
+
+    if(values.occupation === 'keyInformants'){
+      navigate(`/occupation/key-informants`)
+    }
+    if(values.occupation === 'processingMcc'){
+      navigate(`/occupation/milk-processing`)
+    }
   }
 
   const handleDateChange = (date: any) => {
@@ -222,6 +230,13 @@ const ocupationArr = [
   {
     label: 'Poultry Farming',
     id: 'poultryFarming'
+  },
+  { label: 'Processing (MCC) ',
+    id: 'processingMcc'
+  },
+  {
+    label: 'Key informants ',
+    id: 'keyInformants'
   },
   // {
   //   label: 'Livestock Farming ',
