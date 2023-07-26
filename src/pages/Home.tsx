@@ -38,7 +38,7 @@ const Home = () => {
     }
 
     if(values.occupation === 'keyInformants'){
-     navigate(`/occupation/key-informants`)
+    //  navigate(`/occupation/key-informants`)
     }  
     if(values.occupation === 'processingMcc'){
       navigate(`/occupation/milk-processing`)
