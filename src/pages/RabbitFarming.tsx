@@ -46,21 +46,21 @@ const RabbitFarming = () => {
 
   const handleSubmit = () => {
     setDisabled(true)
-    const pigBreeds = pigBreedsArr.filter((el: any) => el.isSelected).map((el => el.label))
-    const pigsTechnicalContraint = pigsTechnicalContraintsArr.filter((el: any) => el.isSelected).map((el => el.label))
+    const rabbitsBreeds = pigBreedsArr.filter((el: any) => el.isSelected).map((el => el.label))
+    const rabbitTechnicalContraints = pigsTechnicalContraintsArr.filter((el: any) => el.isSelected).map((el => el.label))
     if(values.technicalContraintOther){
-      pigsTechnicalContraint.push(values.technicalContraintOther)
+      rabbitTechnicalContraints.push(values.technicalContraintOther)
       delete values.technicalContraintOther
     }
-    const pigsTypeOfStaff = PigstypeOfStaffArr.filter((el: any) => el.isSelected).map((el => el.label))
+    const abbitTypeOfStaff = PigstypeOfStaffArr.filter((el: any) => el.isSelected).map((el => el.label))
     if(values.pigsTypeOfStaffOther) {
-      pigsTypeOfStaff.push(values.pigsTypeOfStaffOther)
+      abbitTypeOfStaff.push(values.pigsTypeOfStaffOther)
       delete values.pigsTypeOfStaffOther
     }
 
-    const pigsSpecificSkillsWorkersNeeded = specificSkillsWorkersNeededArr.filter((el: any) => el.isSelected).map((el => el.label))
+    const rabbitSpecificSkillsWorkersNeeded = specificSkillsWorkersNeededArr.filter((el: any) => el.isSelected).map((el => el.label))
     if(values.specificSkillsWorkersNeededOther) {
-      pigsSpecificSkillsWorkersNeeded.push(values.specificSkillsWorkersNeededOther)
+      rabbitSpecificSkillsWorkersNeeded.push(values.specificSkillsWorkersNeededOther)
       delete values.specificSkillsWorkersNeededOther
     }
 
@@ -74,31 +74,31 @@ const RabbitFarming = () => {
       delete values.womenYouthChallengeExampleOther2
     }
 
-    const pigsHiringRequirements = []
+    const rabbitHiringRequirements = []
     if(values.hiringRequirements1){
-      pigsHiringRequirements.push(values.hiringRequirements1)
+      rabbitHiringRequirements.push(values.hiringRequirements1)
       delete values.hiringRequirements1
     }
     if(values.hiringRequirements2){
-      pigsHiringRequirements.push(values.hiringRequirements2)
+      rabbitHiringRequirements.push(values.hiringRequirements2)
       delete values.hiringRequirements2
     }
     if(values.hiringRequirements3){
-      pigsHiringRequirements.push(values.hiringRequirements3)
+      rabbitHiringRequirements.push(values.hiringRequirements3)
       delete values.hiringRequirements3
     }
 
-    const pigsHiringPositions = []
+    const rabbitHiringPositions = []
     if(values.hiringPositions1){
-      pigsHiringPositions.push(values.hiringPositions1)
+      rabbitHiringPositions.push(values.hiringPositions1)
       delete values.hiringPositions1
     }
     if(values.hiringPositions3){
-      pigsHiringPositions.push(values.hiringPositions2)
+      rabbitHiringPositions.push(values.hiringPositions2)
       delete values.hiringPositions3
     }
     if(values.hiringPositions3){
-      pigsHiringPositions.push(values.hiringPositions3)
+      rabbitHiringPositions.push(values.hiringPositions3)
       delete values.hiringPositions3
     }
     
@@ -106,13 +106,13 @@ const RabbitFarming = () => {
     const formattedData = JSON.parse(savedItem)
     const payload = {
       ...values,
-      pigsHiringPositions,
-      pigsHiringRequirements,
+      rabbitHiringPositions,
+      rabbitHiringRequirements,
       pigsWomenYouthChallengeExample,
-      pigsSpecificSkillsWorkersNeeded,
-      pigsTypeOfStaff,
-      pigsTechnicalContraint,
-      pigBreeds,
+      rabbitSpecificSkillsWorkersNeeded,
+      abbitTypeOfStaff,
+      rabbitTechnicalContraints,
+      rabbitsBreeds,
       ...formattedData
   }
 
@@ -142,12 +142,12 @@ const RabbitFarming = () => {
 
       <div className="separator-container">
           <RadioButton
-            label="How do you consider your dairy farming occupation?"
+            label="How do you consider your rabbits farming occupation?"
             items={pigFarmingOccupationArr}
             handleChange={(event) => {
               setValues({
                 ...values,
-                pigFarmingOccupation: event.target.value
+                rabbitFarmingOccupation: event.target.value
               })
               setOther({
                 ...other,
@@ -160,22 +160,22 @@ const RabbitFarming = () => {
           {other.one &&
             <InputTextfield  placeholder="Other" handleChange={(event: any) => setValues({
               ...values,
-              pigFarmingOccupation: event.target.value
+              rabbitFarmingOccupation: event.target.value
             })} />
           }
         </div>
 
         <div className="separator-container">
-          <InputTextfield type="number" placeholder="How many pigs do you have in total?" handleChange={(event: any) =>
+          <InputTextfield type="number" placeholder="How many rabbits do you have in total?" handleChange={(event: any) =>
             setValues({
               ...values,
-              pigNumbers: event.target.value
+              rabbitsNumbers: event.target.value
             })} />
         </div>
 
         <div className="separator-container">
           <FormGroup>
-            <FormLabel id="demo-row-radio-buttons-group-label">Which breed of dairy cattle do you keep? Tick all those you keep</FormLabel>
+            <FormLabel id="demo-row-radio-buttons-group-label">Which breeds do you keep? Tick all those you keep</FormLabel>
             {pigBreedsArr.map((el: any, idx: any) => {
               if (el.isSelected === undefined) {
                 el.isSelected = false
@@ -193,35 +193,35 @@ const RabbitFarming = () => {
         </div>
 
         <div className="separator-container">
-          <InputTextfield placeholder="What is the average number of pigs sold per month in your farm? " handleChange={(event: any) =>
+          <InputTextfield placeholder="What is the average number of rabbits sold per month in your farm? " handleChange={(event: any) =>
             setValues({
               ...values,
-              monthlyPigsAverage: event.target.value
+              monthlyRabbitsAverage: event.target.value
             })} />
         </div>
 
         <div className="separator-container">
-            <RadioButton label="Do you have a regular market for your pig production" 
+            <RadioButton label="Do you have a regular market for your rabbit production" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigRegularMarket:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasRabbitRegularMarket:event.target.value})}
         />
         </div>
         
         <div className="separator-container">
-            <RadioButton label="What is your estimated monthly income from piggery activities?" 
+            <RadioButton label="What is your estimated monthly income from rabbit farming activities?" 
             items={pigMonthlyIncome}
-            handleChange={(event: any)=> setValues({...values, pigMonthlyIncome:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, rabbitMonthlyIncome:event.target.value})}
         />
         </div>
         
         <div className="separator-container">
           <RadioButton
-            label="How your product is different from your competitors’ products (pigs)? And How are you priced compared to competitors?"
+            label="How your product is different from your competitors’ products (meat, live animal)? ? And How are you priced compared to competitors?"
             items={pigsCompetitorsComparisonArr}
             handleChange={(event) => {
               setValues({
                 ...values,
-                pigsCompetitorsComparison: event.target.value
+                rabbitCompetitorsComparison: event.target.value
               })
               setOther({
                 ...other,
@@ -234,22 +234,46 @@ const RabbitFarming = () => {
           {other.two &&
             <InputTextfield  placeholder="Other" handleChange={(event: any) => setValues({
               ...values,
-              pigsCompetitorsComparison: event.target.value
+              rabbitCompetitorsComparison: event.target.value
             })} />
           }
         </div>
 
         <div className="separator-container">
-            <RadioButton label="Do you face any problems in selling pigs? " 
+            <RadioButton label="Do you face any problems in selling rabbits? " 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, isFacingSellingPigs:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, isFacingSellingRabbits:event.target.value})}
         />
         </div>
 
+        <div className="separator-container">
+          <RadioButton
+            label="Which market outlet do you prefer?"
+            items={pigsMarketOutletPreferenceArr}
+            handleChange={(event) => {
+              setValues({
+                ...values,
+                rabbitMarketOutletPreference: event.target.value
+              })
+              setOther({
+                ...other,
+                ten: event.target.value === 'other'
+              })
+            }
+            }
+          />
+          <div style={{marginTop:10}}></div>
+          {other.ten &&
+            <InputTextfield  placeholder="Other" handleChange={(event: any) => setValues({
+              ...values,
+              rabbitMarketOutletPreference: event.target.value
+            })} />
+          }
+        </div>
         
         <div className="separator-container">
           <FormGroup>
-            <FormLabel id="demo-row-radio-buttons-group-label">What are the main skills/ technical constraints that may affect your dairy cattle production according to you? Tick all those you face.</FormLabel>
+            <FormLabel id="demo-row-radio-buttons-group-label">What are the main skills/ technical constraints that may affect your rabbit farming production according to you? Tick all those you face.</FormLabel>
             {pigsTechnicalContraintsArr.map((el: any, idx: any) => {
               if (el.isSelected === undefined) {
                 el.isSelected = false
@@ -270,12 +294,12 @@ const RabbitFarming = () => {
         <div className="separator-container">
             <RadioButton label="Do you have a farm staff/ workers?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, isPigsHavingStaf:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, isRabbitHavingStaff:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
-          <InputTextfield type="number" placeholder="How many?" handleChange={(event: any) => setValues({...values, pigsNumberOfStaff: event.target.value})}/>
+          <InputTextfield type="number" placeholder="How many?" handleChange={(event: any) => setValues({...values, rabbitNumberOfStaff: event.target.value})}/>
         </div>
 
         <div className="separator-container">
@@ -306,7 +330,7 @@ const RabbitFarming = () => {
             handleChange={(event) => {
               setValues({
                 ...values,
-                pigsGettingCompetentWorker: event.target.value
+                rabbitGettingCompetentWorker: event.target.value
               })
               setOther({
                 ...other,
@@ -318,7 +342,7 @@ const RabbitFarming = () => {
           {other.five &&
             <InputTextfield placeholder="Other" handleChange={(event: any) => setValues({
               ...values,
-              pigsGettingCompetentWorker: event.target.value
+              rabbitGettingCompetentWorker: event.target.value
             })} />
           }
         </div>
@@ -330,7 +354,7 @@ const RabbitFarming = () => {
             handleChange={(event) => {
               setValues({
                 ...values,
-                pigsTechnicalChallenges: event.target.value
+                rabbitTechnicalChallenges: event.target.value
               })
               setOther({
                 ...other,
@@ -342,7 +366,7 @@ const RabbitFarming = () => {
           {other.six &&
             <InputTextfield placeholder="Other" handleChange={(event: any) => setValues({
               ...values,
-              pigsTechnicalChallenges: event.target.value
+              rabbitTechnicalChallenges: event.target.value
             })} />
           }
         </div>
@@ -368,15 +392,15 @@ const RabbitFarming = () => {
         </div>
 
         <div className="separator-container">
-            <RadioButton label="Do you have specific challenges faced by women or youth in dairy cattle daily activities?" 
+            <RadioButton label="Do you have specific challenges faced by women or youth in dairy rabbit farming activities?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsWomenYouthDairyCattleChallenges:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasRabbitWomenYouthDairyCattleChallenges:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
           <FormGroup>
-            <FormLabel id="demo-row-radio-buttons-group-label">If yes, give example of 3 challenges?</FormLabel>
+            <FormLabel id="demo-row-radio-buttons-group-label">If yes, give example of 2 challenges?</FormLabel>
             <br/>
             <InputTextfield placeholder="Challenge one" handleChange={(event: any) => setValues({ ...values, womenYouthChallengeExampleOther1: event.target.value })} />
             <InputTextfield placeholder="Challenge two" handleChange={(event: any) => setValues({...values, womenYouthChallengeExampleOther2: event.target.value})}/>
@@ -386,49 +410,32 @@ const RabbitFarming = () => {
         <div className="separator-container">
             <RadioButton label="Do you have persons with disabilities working in your farm?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsPersonWithDisability:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasRabbitPersonWithDisability:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
-          <InputTextfield type="number" placeholder="How many?" handleChange={(event: any) => setValues({...values, pigsPersonsWithDisability: event.target.value})}/>
+          <InputTextfield type="number" placeholder="How many?" handleChange={(event: any) => setValues({...values, rabbitPersonsWithDisability: event.target.value})}/>
         </div>
 
         <div className="separator-container">
             <RadioButton label="Do you plan for expanding your business/cattle farming?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsExpansionPlanning:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasRabbitExpansionPlanning:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
             <RadioButton label="Do you plan to recruit new farm workers/staff?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsRecruitmentPlanning:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasRabbitRecruitmentPlanning:event.target.value})}
         />
         </div>
 
         <div className="separator-container">
             <RadioButton label="If yes, are there any specific requirements do you ask before hiring her/his?" 
             items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsHiringRequirement:event.target.value})}
-        />
-        </div>
-
-        <div className="separator-container">
-          <FormGroup>
-            <FormLabel id="demo-row-radio-buttons-group-label">If yes, give example of 2 challenges?</FormLabel>
-            <br/>
-            <InputTextfield placeholder="Example one" handleChange={(event: any) => setValues({ ...values, hiringRequirements1: event.target.value })} />
-            <InputTextfield placeholder="Example two" handleChange={(event: any) => setValues({...values, hiringRequirements2: event.target.value})}/>
-            <InputTextfield placeholder="Example three" handleChange={(event: any) => setValues({...values, hiringRequirements3: event.target.value})}/>
-          </FormGroup>
-        </div>
-
-        <div className="separator-container">
-            <RadioButton label="If yes, are there any specific requirements do you ask before hiring her/his?" 
-            items={truthItems}
-            handleChange={(event: any)=> setValues({...values, hasPigsHiringRequirement:event.target.value})}
+            handleChange={(event: any)=> setValues({...values, hasRabbitHiringRequirement:event.target.value})}
         />
         </div>
 
