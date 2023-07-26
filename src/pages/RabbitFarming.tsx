@@ -11,7 +11,7 @@ import FormLabel from '@mui/material/FormLabel';
 import axios from 'axios'
 
 
-const PigFarming = () => {
+const RabbitFarming = () => {
   const navigate = useNavigate()
   const [values, setValues] = useState<any>({})
   const [other, setOther] = useState<any>({})
@@ -460,7 +460,7 @@ const PigFarming = () => {
   )
 }
 
-export default PigFarming
+export default RabbitFarming
 
 
 const pigFarmingOccupationArr = [

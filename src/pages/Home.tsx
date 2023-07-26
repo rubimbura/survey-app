@@ -30,6 +30,12 @@ const Home = () => {
     if(values.occupation === 'pigFarming'){
       navigate(`/occupation/pig-farming`)
     }
+    if(values.occupation === 'goatFarming'){
+      navigate(`/occupation/goat-farming`)
+    }
+    if(values.occupation === 'rabitFarming'){
+      navigate(`/occupation/rabbit-farming`)
+    }
   }
 
   const handleDateChange = (date: any) => {
@@ -162,7 +168,7 @@ const Home = () => {
               ...values,
               position:event.target.value
             })} 
-          />
+        />
           <InputTextfield 
             placeholder="Number of years involved in mentioned occupation" 
             handleChange={(event:any) => {
@@ -174,7 +180,7 @@ const Home = () => {
           />
         </div>
         <div style={{ display: 'flex', marginLeft: 'auto', width: '30%', marginTop: 30 }}>
-          <PrimaryButton onClick={handleSubmit} label="Submit" />
+          <PrimaryButton onClick={handleSubmit} label="Next" />
         </div>
       </div>
     </div>
@@ -204,6 +210,14 @@ const ocupationArr = [
   {
     label: 'Pig Farming ',
     id: 'pigFarming'
+  },
+  {
+    label: 'Goat/Sheep Farming',
+    id: 'goatFarming'
+  },
+  {
+    label: 'Rabbit Farming ',
+    id: 'rabbitFarming'
   },
   // {
   //   label: 'Livestock Farming ',

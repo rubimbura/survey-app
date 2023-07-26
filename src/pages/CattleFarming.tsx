@@ -166,7 +166,7 @@ const OccupationForm = () => {
         </div>
 
         <div className="separator-container">
-          <InputTextfield placeholder="How many dairy animals do you have in total" handleChange={(event: any) =>
+          <InputTextfield type="number" placeholder="How many dairy animals do you have in total" handleChange={(event: any) =>
             setValues({
               ...values,
               dairyAnimals: event.target.value
@@ -463,7 +463,7 @@ const OccupationForm = () => {
 
         <div className="separator-container">
           <FormGroup>
-            <FormLabel id="demo-row-radio-buttons-group-label">If yes, give example of 2 challenges?</FormLabel>
+            <FormLabel id="demo-row-radio-buttons-group-label">If yes, give example of 3 challenges?</FormLabel>
             <br/>
             <InputTextfield placeholder="Example one" handleChange={(event: any) => setValues({ ...values, hiringRequirements1: event.target.value })} />
             <InputTextfield placeholder="Example two" handleChange={(event: any) => setValues({...values, hiringRequirements2: event.target.value})}/>
