@@ -11,6 +11,7 @@ const GoatFarming = lazy(() => import('../pages/GoatFarming'))
 const RabbitFarming = lazy(() => import('../pages/RabbitFarming'))
 const KeyInformants = lazy(() => import('../pages/KeyInformants'))
 const MilkProcessing = lazy(() => import('../pages/MilkProccessing'))
+const PoultryFarming = lazy(() => import('../pages/PoultryFarming'))
 
 
 const DefaultRoutes = () => {
@@ -25,6 +26,7 @@ const DefaultRoutes = () => {
         <Route path='/occupation/rabbit-farming' element={<RabbitFarming/>}/>
         <Route path='/occupation/key-informants' element={<KeyInformants/>}/>
         <Route path='/occupation/milk-processing' element={<MilkProcessing/>}/>
+        <Route path='/occupation/poutly-farming' element={<PoultryFarming/>}/>
         <Route path='/success' element={<SuccessPage/>}/>
       </Routes>
       </Suspense>

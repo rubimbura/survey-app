@@ -37,12 +37,14 @@ const Home = () => {
       navigate(`/occupation/rabbit-farming`)
     }
 
-
     if(values.occupation === 'keyInformants'){
-      navigate(`/occupation/key-informants`)
-    }
+     navigate(`/occupation/key-informants`)
+    }  
     if(values.occupation === 'processingMcc'){
       navigate(`/occupation/milk-processing`)
+    }
+    if(values.occupation === 'poultryFarming'){
+      navigate(`/occupation/poutly-farming`)
     }
   }
 

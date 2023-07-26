@@ -1,10 +1,12 @@
+import HeaderNav from "../components/Header"
 
 
 
 
 const KeyInformants = () => {
   return(
-    <div>
+    <div className="home-page-container">
+        <HeaderNav />
         key informants page
     </div>
   )
