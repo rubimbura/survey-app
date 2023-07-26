@@ -219,6 +219,10 @@ const ocupationArr = [
     label: 'Rabbit Farming ',
     id: 'rabbitFarming'
   },
+  {
+    label: 'Poultry Farming',
+    id: 'poultryFarming'
+  },
   // {
   //   label: 'Livestock Farming ',
   //   id: 'livestockFarming'
