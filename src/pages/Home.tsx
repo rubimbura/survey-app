@@ -22,51 +22,167 @@ const Home = () => {
     contact: ''
   })
 
+  const [errors, setError] = useState<any>({})
+  const [helperText, setHelperText] = useState<any>({})
+
   const handleSubmit = () => {
     if(!values.date){
+      setError({
+        ...errors,
+        date:true
+      })
+      setHelperText({
+        ...errors,
+        date:'This field is required'
+      })
       return
     }
     if(!values.province){
+      setError({
+        ...errors,
+        province:true
+      })
+      setHelperText({
+        ...errors,
+        province:'This field is required'
+      })
       return
     }
     if(!values.district){
+      setError({
+        ...errors,
+        district:true
+      })
+      setHelperText({
+        ...errors,
+        district:'This field is required'
+      })
       return
     }
     if(!values.sector){
+      setError({
+        ...errors,
+        sector:true
+      })
+      setHelperText({
+        ...errors,
+        sector:'This field is required'
+      })
       return
     }
     if(!values.village){
+      setError({
+        ...errors,
+        village:true
+      })
+      setHelperText({
+        ...errors,
+        village:'This field is required'
+      })
       return
     }
     if(!values.name){
+      setError({
+        ...errors,
+        name:true
+      })
+      setHelperText({
+        ...errors,
+        name:'This field is required'
+      })
       return
     }
     if(!values.age){
+      setError({
+        ...errors,
+        age:true
+      })
+      setHelperText({
+        ...errors,
+        age:'This field is required'
+      })
       return
     }
     if(!values.gender){
+      setError({
+        ...errors,
+        gender:true
+      })
+      setHelperText({
+        ...errors,
+        gender:'This field is required'
+      })
       return
     }
     if(!values.contact){
+      setError({
+        ...errors,
+        contact:true
+      })
+      setHelperText({
+        ...errors,
+        contact:'This field is required'
+      })
       return
     }
    
     if(!values.disability){
+      setError({
+        ...errors,
+        disability:true
+      })
+      setHelperText({
+        ...errors,
+        disability:'This field is required'
+      })
       return
     }
     if(!values.occupation){
+      setError({
+        ...errors,
+        occupation:true
+      })
+      setHelperText({
+        ...errors,
+        occupation:'This field is required'
+      })
       return
     }
     if(!values.position){
+      setError({
+        ...errors,
+        position:true
+      })
+      setHelperText({
+        ...errors,
+        position:'This field is required'
+      })
       return
     }
     if(!values.experience){
+      setError({
+        ...errors,
+        experience:true
+      })
+      setHelperText({
+        ...errors,
+        experience:'This field is required'
+      })
       return
     }
     if(!values.qualification){
+      setError({
+        ...errors,
+        qualification:true
+      })
+      setHelperText({
+        ...errors,
+        qualification:'This field is required'
+      })
       return
     }
-    
+    setError({})
+    setHelperText({})
     sessionStorage.setItem('requireFields', JSON.stringify(values))
     if(values.occupation === 'cattleFarming'){
       navigate(`/occupation/cattle-farming`)
@@ -107,6 +223,9 @@ const Home = () => {
           <DatePickerComponent
             placeholder="Date of interview"
             handleDateChange={handleDateChange}
+            required={true}
+            error={errors.date}
+            errorText={helperText.date}
           />
         </div>
         <div className="row-item-ctn">
@@ -116,6 +235,9 @@ const Home = () => {
               ...values,
               province: e.target.value
             })}
+            required={true}
+            error={errors.province}
+            errorText={helperText.province}
           />
           <InputTextfield
             placeholder="District"
@@ -123,6 +245,8 @@ const Home = () => {
               ...values,
               district: e.target.value
             })}
+            error={errors.district}
+            errorText={helperText.district}
           />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
@@ -132,6 +256,8 @@ const Home = () => {
               ...values,
               sector: e.target.value
             })}
+            error={errors.sector}
+            errorText={helperText.sector}
           />
           <InputTextfield
             placeholder="Village"
@@ -139,6 +265,8 @@ const Home = () => {
               ...values,
               village: e.target.value
             })}
+            error={errors.village}
+            errorText={helperText.village}
           />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
@@ -148,6 +276,8 @@ const Home = () => {
               ...values,
               name: e.target.value
             })}
+            error={errors.name}
+            errorText={helperText.name}
           />
           <InputTextfield
             placeholder="Age"
@@ -155,6 +285,8 @@ const Home = () => {
               ...values,
               age: e.target.value
             })}
+            error={errors.age}
+            errorText={helperText.age}
           />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
@@ -164,6 +296,8 @@ const Home = () => {
               ...values,
               contact: e.target.value
             })}
+            error={errors.contact}
+            errorText={helperText.contact}
           />
           <SelectField
             placeholder="Gender"
@@ -175,6 +309,7 @@ const Home = () => {
                 gender: event.target.value,
               })
             }}
+            
           />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
@@ -222,6 +357,8 @@ const Home = () => {
               ...values,
               position:event.target.value
             })} 
+            error={errors.position}
+            errorText={helperText.position}
         />
           <InputTextfield 
             placeholder="Number of years involved in mentioned occupation" 
@@ -231,6 +368,8 @@ const Home = () => {
                 experience:event.target.value
               })
             }} 
+            error={errors.experience}
+            errorText={helperText.experience}
           />
         </div>
         <div style={{ display: 'flex', marginLeft: 'auto', width: '30%', marginTop: 30 }}>

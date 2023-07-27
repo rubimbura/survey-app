@@ -3,11 +3,13 @@ import TextField from '@mui/material/TextField';
 type Props = {
   placeholder:string,
   handleChange:any,
-  type?:any
+  type?:any,
+  required?:boolean,
+  error?: boolean,
+  errorText?:string,
 }
 
-
-export default function InputTextfield({placeholder,handleChange, type}: Props) {
+export default function InputTextfield({placeholder,handleChange, type, required, errorText, error}: Props) {
   return (
     <TextField 
       id="outlined-basic" 
@@ -16,6 +18,9 @@ export default function InputTextfield({placeholder,handleChange, type}: Props) 
       onChange={handleChange}
       type={type}
       style={{width: '100%', paddingBottom: 20}}
+      required={required}
+      error={error}
+      helperText={errorText}
     />
   );
 }
