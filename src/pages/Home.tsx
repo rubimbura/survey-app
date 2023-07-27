@@ -198,7 +198,7 @@ const Home = () => {
     }
 
     if(values.occupation === 'keyInformants'){
-    //  navigate(`/occupation/key-informants`)
+     navigate(`/occupation/key-informants`)
     }  
     if(values.occupation === 'processingMcc'){
       navigate(`/occupation/milk-processing`)
@@ -218,7 +218,7 @@ const Home = () => {
   return (
     <div className="home-page-container">
       <HeaderNav />
-      <div style={{ padding: 48 }}>
+      <div style={{ padding: 32 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           <DatePickerComponent
             placeholder="Date of interview"
@@ -249,7 +249,7 @@ const Home = () => {
             errorText={helperText.district}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="row-item-ctn">
           <InputTextfield
             placeholder="Sector"
             handleChange={(e: any) => setValues({
@@ -269,7 +269,7 @@ const Home = () => {
             errorText={helperText.village}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="row-item-ctn">
         <InputTextfield
             placeholder="Names"
             handleChange={(e: any) => setValues({
@@ -289,7 +289,7 @@ const Home = () => {
             errorText={helperText.age}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="row-item-ctn">
         <InputTextfield
             placeholder="Contact"
             handleChange={(e: any) => setValues({
@@ -312,7 +312,7 @@ const Home = () => {
             
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="row-item-ctn">
         <SelectField
             placeholder="Level of education"
             menuItems={educationArr}
@@ -336,7 +336,7 @@ const Home = () => {
             }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="row-item-ctn">
         <SelectField
             placeholder="Occupation"
             menuItems={ocupationArr}
@@ -349,7 +349,7 @@ const Home = () => {
             }}
           />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <div className="row-item-ctn">
           <InputTextfield 
             placeholder="What is your position in your business/organization/institution/cooperative" 
             handleChange={(event:any) => 
