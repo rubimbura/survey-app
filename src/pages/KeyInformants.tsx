@@ -15,14 +15,31 @@ const KeyInformants = () => {
 
   const navigate = useNavigate()
   const [values, setValues] = useState<any>({})
-  const [checkedItems, setCheckedItems] = useState(false)
   const [disabled, setDisabled] = useState(false)
 
 
 
-
-
   const handleSubmit = () => {
+    setDisabled(true)
+    const savedItem = sessionStorage.getItem('requireFields') || ''
+    const formattedData = JSON.parse(savedItem)
+    const payload = {
+      ...values,
+      ...formattedData
+    }
+
+    const url = 'https://survey-app-heroku-4b2ea8ed2f87.herokuapp.com/information'
+    axios.post(url, payload)
+      .then((response: any) => {
+        console.log('Post successful:', response);
+        setDisabled(false)
+        navigate('/success')
+        sessionStorage.removeItem('requireFields')
+      })
+      .catch((error: any) => {
+        console.error('Error posting data:', error);
+        setDisabled(false)
+      });
   }
 
   
@@ -42,7 +59,6 @@ const KeyInformants = () => {
     }));
   };
 
-  console.log('the values we have', values)
 
   return (
     <div className="home-page-container">
