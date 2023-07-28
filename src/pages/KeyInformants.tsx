@@ -172,41 +172,38 @@ const keyInformantsItems = [
       },
       {
         question: {
-          label: 'What are opportunities for job creation in the dairy cattle farming and related businesses?',
+          label: 'What are opportunities for job creation (new jobs or improved employments) in your related business/ institution/ cooperative? ',
           value: 'informantJobCreation',
           content: [
             {
               label: 'In general: ',
             },
             {
-              label: 'Youth:',
+              label: 'Special for youth if available',
             },
             {
-              label: 'Women:',
+              label: 'Special for women if available',
             },
             {
-              label: 'Persons with disabilities:',
+              label: 'Special for persons with disabilities if available',
             }
           ]
         }
       },
       {
         question: {
-          label: 'What are opportunities for job creation in the dairy cattle farming and related businesses?',
+          label: 'What are the potential opportunities for expanding related to your business/ institution/ cooperative?',
           value: 'informantPotentialOpportunities',
           content: [
             {
-              label: 'In general: ',
+              label: 'For new market opportunities',
             },
             {
-              label: 'Youth:',
+              label: 'For diversification into other by products',
             },
             {
-              label: 'Women:',
+              label: 'For distribution strategies in Rwandan market',
             },
-            {
-              label: 'Persons with disabilities:',
-            }
           ]
         }
       },
