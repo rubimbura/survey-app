@@ -137,7 +137,7 @@ export default KeyInformants
 const keyInformantsItems = [
   {
     label: 'In Dairy Cattle (general current state & livestock farming/production)',
-    value:'sampleData',
+    value:'informantCurrentStatus',
     items: [
       {
         label: 'Current status',
@@ -157,7 +157,7 @@ const keyInformantsItems = [
       {
         question: {
           label: 'What are opportunities for job creation in the dairy cattle farming and related businesses?',
-          value: 'secondSampleValue',
+          value: 'informantJobCreation',
           content: [
             {
               label: 'In general: ',
@@ -177,7 +177,7 @@ const keyInformantsItems = [
       {
         question: {
           label: 'What are opportunities for job creation in the dairy cattle farming and related businesses?',
-          value: 'secondSampleValue',
+          value: 'informantPotentialOpportunities',
           content: [
             {
               label: 'In general: ',
@@ -196,8 +196,8 @@ const keyInformantsItems = [
       },
       {
         question: {
-          label: '9.3.3.	What are the potential opportunities for expanding related to your business/ institution/ cooperative?',
-          value: 'secondSampleValue',
+          label: 'What are the potential opportunities for expanding related to your business/ institution/ cooperative?',
+          value: 'informantLiveStockRecomendations',
           content: [
             {
               label: 'For new market opportunities:',
@@ -214,7 +214,7 @@ const keyInformantsItems = [
       {
         question: {
           label: 'What recommendations can you suggest for livestock interventions that would promote job creation at different level of the values chain (reminder to take notes for all value chains (Cattle, Small ruminants, Rabbits, Pig and Poultry):',
-          value: 'secondSampleValue',
+          value: 'informantLiveStockRecomendations',
           content: [
             {
               label: 'To Farmers',
@@ -252,7 +252,7 @@ const keyInformantsItems = [
       {
         question: {
           label: 'What do you consider to be the main problems/challenges facing the Livestock industry in general in terms of job creation in your area? ',
-          value: 'secondSampleValue',
+          value: 'informantChallenges',
           content: [
             {
               label: 'Your answer',
@@ -261,10 +261,22 @@ const keyInformantsItems = [
           ]
         }
       },
+      // {
+      //   question: {
+      //     label: 'What do you consider to be the main problems/challenges facing the Livestock industry in general in terms of job creation in your area? ',
+      //     value: 'informantChallenges',
+      //     content: [
+      //       {
+      //         label: 'Your answer',
+      //         id: 'To Farmers'
+      //       },
+      //     ]
+      //   }
+      // },
       {
         question: {
           label: 'Do you have any list and contact details of key stakeholders and actors in the livestock landscape in your area? (specific questions to district, and public institutions)',
-          value: 'secondSampleValue',
+          value: 'informantStakeHolderContactDetails',
           content: [
             {
               label: 'For Most powerful livestock farmers/producers/ traders',
@@ -289,7 +301,7 @@ const keyInformantsItems = [
       {
         question: {
           label: 'Can you share with us any by laws and regulations governing livestock industry on production, processing, transporting and marketing in the country/ district? (specific question to Minagri/RICA/RAB)',
-          value: 'secondSampleValue',
+          value: 'informantLawsRegulations',
           content: [
             {
               label: 'Your answer',
@@ -302,7 +314,7 @@ const keyInformantsItems = [
       {
         question: {
           label: 'For banks, Do your bank offer loan to livestock activities? Yes/ No',
-          value: 'secondSampleValue',
+          value: 'isInformantBankOfferLoan',
           content: [
             {
               label: 'Yes/No',
@@ -314,7 +326,7 @@ const keyInformantsItems = [
       {
         question: {
           label: 'If yes, at which interest rate for livestock businesses? ',
-          value: 'secondSampleValue',
+          value: 'informantLiveStockLoanInterest',
           content: [
             {
               label: 'Your answer',
@@ -326,7 +338,7 @@ const keyInformantsItems = [
       {
         question: {
           label: 'At which interest rate for other businesses?',
-          value: 'secondSampleValue',
+          value: 'informantBusinessLoanInterest',
           content: [
             {
               label: 'Your answer',
