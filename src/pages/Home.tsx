@@ -26,163 +26,163 @@ const Home = () => {
   const [helperText, setHelperText] = useState<any>({})
 
   const handleSubmit = () => {
-    if(!values.date){
-      setError({
-        ...errors,
-        date:true
-      })
-      setHelperText({
-        ...errors,
-        date:'This field is required'
-      })
-      return
-    }
-    if(!values.province){
-      setError({
-        ...errors,
-        province:true
-      })
-      setHelperText({
-        ...errors,
-        province:'This field is required'
-      })
-      return
-    }
-    if(!values.district){
-      setError({
-        ...errors,
-        district:true
-      })
-      setHelperText({
-        ...errors,
-        district:'This field is required'
-      })
-      return
-    }
-    if(!values.sector){
-      setError({
-        ...errors,
-        sector:true
-      })
-      setHelperText({
-        ...errors,
-        sector:'This field is required'
-      })
-      return
-    }
-    if(!values.village){
-      setError({
-        ...errors,
-        village:true
-      })
-      setHelperText({
-        ...errors,
-        village:'This field is required'
-      })
-      return
-    }
-    if(!values.name){
-      setError({
-        ...errors,
-        name:true
-      })
-      setHelperText({
-        ...errors,
-        name:'This field is required'
-      })
-      return
-    }
-    if(!values.age){
-      setError({
-        ...errors,
-        age:true
-      })
-      setHelperText({
-        ...errors,
-        age:'This field is required'
-      })
-      return
-    }
-    if(!values.gender){
-      setError({
-        ...errors,
-        gender:true
-      })
-      setHelperText({
-        ...errors,
-        gender:'This field is required'
-      })
-      return
-    }
-    if(!values.contact){
-      setError({
-        ...errors,
-        contact:true
-      })
-      setHelperText({
-        ...errors,
-        contact:'This field is required'
-      })
-      return
-    }
+    // if(!values.date){
+    //   setError({
+    //     ...errors,
+    //     date:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     date:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.province){
+    //   setError({
+    //     ...errors,
+    //     province:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     province:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.district){
+    //   setError({
+    //     ...errors,
+    //     district:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     district:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.sector){
+    //   setError({
+    //     ...errors,
+    //     sector:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     sector:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.village){
+    //   setError({
+    //     ...errors,
+    //     village:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     village:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.name){
+    //   setError({
+    //     ...errors,
+    //     name:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     name:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.age){
+    //   setError({
+    //     ...errors,
+    //     age:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     age:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.gender){
+    //   setError({
+    //     ...errors,
+    //     gender:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     gender:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.contact){
+    //   setError({
+    //     ...errors,
+    //     contact:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     contact:'This field is required'
+    //   })
+    //   return
+    // }
    
-    if(!values.disability){
-      setError({
-        ...errors,
-        disability:true
-      })
-      setHelperText({
-        ...errors,
-        disability:'This field is required'
-      })
-      return
-    }
-    if(!values.occupation){
-      setError({
-        ...errors,
-        occupation:true
-      })
-      setHelperText({
-        ...errors,
-        occupation:'This field is required'
-      })
-      return
-    }
-    if(!values.position){
-      setError({
-        ...errors,
-        position:true
-      })
-      setHelperText({
-        ...errors,
-        position:'This field is required'
-      })
-      return
-    }
-    if(!values.experience){
-      setError({
-        ...errors,
-        experience:true
-      })
-      setHelperText({
-        ...errors,
-        experience:'This field is required'
-      })
-      return
-    }
-    if(!values.qualification){
-      setError({
-        ...errors,
-        qualification:true
-      })
-      setHelperText({
-        ...errors,
-        qualification:'This field is required'
-      })
-      return
-    }
-    setError({})
-    setHelperText({})
+    // if(!values.disability){
+    //   setError({
+    //     ...errors,
+    //     disability:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     disability:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.occupation){
+    //   setError({
+    //     ...errors,
+    //     occupation:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     occupation:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.position){
+    //   setError({
+    //     ...errors,
+    //     position:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     position:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.experience){
+    //   setError({
+    //     ...errors,
+    //     experience:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     experience:'This field is required'
+    //   })
+    //   return
+    // }
+    // if(!values.qualification){
+    //   setError({
+    //     ...errors,
+    //     qualification:true
+    //   })
+    //   setHelperText({
+    //     ...errors,
+    //     qualification:'This field is required'
+    //   })
+    //   return
+    // }
+    // setError({})
+    // setHelperText({})
     sessionStorage.setItem('requireFields', JSON.stringify(values))
     if(values.occupation === 'cattleFarming'){
       navigate(`/occupation/cattle-farming`)
