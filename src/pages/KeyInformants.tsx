@@ -217,13 +217,120 @@ const keyInformantsItems = [
           value: 'secondSampleValue',
           content: [
             {
-              label: 'For new market opportunities:',
+              label: 'To Farmers',
+              id: 'To Farmers'
             },
             {
-              label: 'For diversification into other by products',
+              label: 'To MCCs',
+              id:   'To MCCs'
             },
             {
-              label: 'For distribution strategies in Rwandan market',
+              label: 'Milk Processors',
+              id: 'Milk Processors'
+            },
+        
+            {
+              label: 'Meat processors',
+              id: 'Meat processors'
+            },
+            {
+              label: 'Skin processors',
+              id:   'Skin processors'
+            },
+            {
+              label: 'To Traders (milk, meat, eggs)',
+              id: 'To Traders (milk, meat, eggs)'
+            },
+        
+            {
+              label: 'To Service providers (vets,…)',
+              id: 'To Service providers (vets,…): '
+            },
+          ]
+        }
+      },
+      {
+        question: {
+          label: 'What do you consider to be the main problems/challenges facing the Livestock industry in general in terms of job creation in your area? ',
+          value: 'secondSampleValue',
+          content: [
+            {
+              label: 'Your answer',
+              id: 'To Farmers'
+            },
+          ]
+        }
+      },
+      {
+        question: {
+          label: 'Do you have any list and contact details of key stakeholders and actors in the livestock landscape in your area? (specific questions to district, and public institutions)',
+          value: 'secondSampleValue',
+          content: [
+            {
+              label: 'For Most powerful livestock farmers/producers/ traders',
+              id: 'For Most powerful livestock farmers/producers/ traders'
+            },
+            {
+              label: 'For MCCs and milk transporters',
+              id:   'For MCCs and milk transporters'
+            },
+            {
+              label: 'For Livestock by products processors/ distributors',
+              id: 'For Livestock by products processors/ distributors'
+            },
+          
+            {
+              label: 'For Meat processors/distributors',
+              id: 'For Meat processors/distributors'
+            },
+          ]
+        }
+      },
+      {
+        question: {
+          label: 'Can you share with us any by laws and regulations governing livestock industry on production, processing, transporting and marketing in the country/ district? (specific question to Minagri/RICA/RAB)',
+          value: 'secondSampleValue',
+          content: [
+            {
+              label: 'Your answer',
+              id: 'To Farmers'
+            },
+          ]
+        }
+      },
+
+      {
+        question: {
+          label: 'For banks, Do your bank offer loan to livestock activities? Yes/ No',
+          value: 'secondSampleValue',
+          content: [
+            {
+              label: 'Yes/No',
+              id: 'To Farmers'
+            },
+          ]
+        }
+      },
+      {
+        question: {
+          label: 'If yes, at which interest rate for livestock businesses? ',
+          value: 'secondSampleValue',
+          content: [
+            {
+              label: 'Your answer',
+              id: 'To Farmers'
+            },
+          ]
+        }
+      },
+      {
+        question: {
+          label: 'At which interest rate for other businesses?',
+          value: 'secondSampleValue',
+          content: [
+            {
+              label: 'Your answer',
+              id: 'To Farmers'
             },
           ]
         }
@@ -231,4 +338,7 @@ const keyInformantsItems = [
     ]
   },
 ]
+
+
+
 
