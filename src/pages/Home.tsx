@@ -193,7 +193,7 @@ const Home = () => {
     if(values.occupation === 'goatFarming'){
       navigate(`/occupation/goat-farming`)
     }
-    if(values.occupation === 'rabitFarming'){
+    if(values.occupation === 'rabbitFarming'){
       navigate(`/occupation/rabbit-farming`)
     }
 
