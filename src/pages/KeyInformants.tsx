@@ -207,23 +207,23 @@ const keyInformantsItems = [
           ]
         }
       },
-      {
-        question: {
-          label: 'What are the potential opportunities for expanding related to your business/ institution/ cooperative?',
-          value: 'informantLiveStockRecomendations',
-          content: [
-            {
-              label: 'For new market opportunities:',
-            },
-            {
-              label: 'For diversification into other by products',
-            },
-            {
-              label: 'For distribution strategies in Rwandan market',
-            },
-          ]
-        }
-      },
+      // {
+      //   question: {
+      //     label: 'What are the potential opportunities for expanding related to your business/ institution/ cooperative?',
+      //     value: 'informantLiveStockRecomendations',
+      //     content: [
+      //       {
+      //         label: 'For new market opportunities:',
+      //       },
+      //       {
+      //         label: 'For diversification into other by products',
+      //       },
+      //       {
+      //         label: 'For distribution strategies in Rwandan market',
+      //       },
+      //     ]
+      //   }
+      // },
       {
         question: {
           label: 'What recommendations can you suggest for livestock interventions that would promote job creation at different level of the values chain (reminder to take notes for all value chains (Cattle, Small ruminants, Rabbits, Pig and Poultry):',
