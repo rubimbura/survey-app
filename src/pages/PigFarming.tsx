@@ -595,8 +595,8 @@ const pigsTechnicalContraintsArr = [
     id:'Lack of/ limited skills in sourcing the breeding stock'
   },
   {
-    label: 'Lack of/ limited skills in sourcing the breeding stock',
-    id:'Lack of/ limited skills in sourcing the breeding stock'
+    label: 'Lack/ limited skills in feeds formulation/ feeding',
+    id:'Lack/ limited skills in feeds formulation/ feeding'
   },
   {
     label: 'Lack of skilled/ competent farm workers',

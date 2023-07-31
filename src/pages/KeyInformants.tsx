@@ -152,7 +152,7 @@ export default KeyInformants
 
 const keyInformantsItems = [
   {
-    label: 'In Dairy Cattle (general current state & livestock farming/production)',
+    label: 'What is the current state & livestock farming/production/market/ products/ traders? (reminder to take notes for all value chains (Cattle, Small ruminants, Rabbits, Pig and Poultry)',
     value:'informantCurrentStatus',
     items: [
       {
