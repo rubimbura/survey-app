@@ -129,7 +129,7 @@ const PoultryFarming = () => {
 
         <div className="separator-container">
           <RadioButton
-            label="How do you consider your dairy farming occupation?"
+            label="How do you consider your poultry farming occupation?"
             items={poultryFarmingOccupationArr}
             handleChange={(event) => {
               setValues({
